@@ -14,6 +14,7 @@
 		65E626B92BAE04A000D6CBE7 /* GameOfThronesWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E626B82BAE04A000D6CBE7 /* GameOfThronesWikiTests.swift */; };
 		65E626C32BAE04A000D6CBE7 /* GameOfThronesWikiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E626C22BAE04A000D6CBE7 /* GameOfThronesWikiUITests.swift */; };
 		65E626C52BAE04A000D6CBE7 /* GameOfThronesWikiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E626C42BAE04A000D6CBE7 /* GameOfThronesWikiUITestsLaunchTests.swift */; };
+		65E626D32BAE089400D6CBE7 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 65E626D22BAE089400D6CBE7 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E626D32BAE089400D6CBE7 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = GameOfThronesWiki;
+			packageProductDependencies = (
+				65E626D22BAE089400D6CBE7 /* ComposableArchitecture */,
+			);
 			productName = GameOfThronesWiki;
 			productReference = 65E626A42BAE049B00D6CBE7 /* GameOfThronesWiki.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 65E6269B2BAE049B00D6CBE7;
+			packageReferences = (
+				65E626D12BAE089400D6CBE7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 65E626A52BAE049B00D6CBE7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -588,6 +596,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		65E626D12BAE089400D6CBE7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		65E626D22BAE089400D6CBE7 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65E626D12BAE089400D6CBE7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 65E6269C2BAE049B00D6CBE7 /* Project object */;
 }

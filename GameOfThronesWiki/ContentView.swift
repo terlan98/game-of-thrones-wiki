@@ -7,15 +7,24 @@
 
 import SwiftUI
 
+// https://gameofthronesquotes.xyz
+// http://thronesapi.com
+
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            Text("TAB 1")
+                .tabItem {
+                    Image(systemName: "person.3.fill")
+                    Text("Characters")
+                }
+            
+            Text("TAB 2")
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("Favorites")
+                }
         }
-        .padding()
     }
 }
 
