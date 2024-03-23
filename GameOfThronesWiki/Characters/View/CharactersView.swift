@@ -13,15 +13,48 @@ struct CharactersView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading) {
-              ForEach(store.characters) { character in
-                Text(character.fullName)
-              }
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    ForEach(store.characters) { character in
+                        CharacterCellView(character: character)
+                    }
+                }
+                .padding()
+                .background {
+                    RoundedRectangle(cornerRadius: 16)
+                        .foregroundStyle(Color.cyan.opacity(0.2))
+                }
+                .padding()
             }
+            .navigationTitle("Characters")
         }
         .onAppear {
             store.send(.fetchTriggered)
         }
+    }
+}
+
+struct CharacterCellView: View {
+    var character: Character
+    
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text(character.fullName)
+                    .font(.system(size: 22, weight: .semibold))
+                
+                Text(character.title)
+                    .font(.system(size: 14, weight: .light))
+                    .foregroundStyle(.secondary)
+            }
+            Spacer()
+        }
+        .padding()
+        .background {
+            RoundedRectangle(cornerRadius: 12)
+                .foregroundStyle(.background)
+        }
+        .padding(.horizontal, 2)
     }
 }
 

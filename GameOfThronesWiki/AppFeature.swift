@@ -5,4 +5,9 @@
 //  Created by Tarlan Ismayilsoy on 23.03.24.
 //
 
-import Foundation
+import ComposableArchitecture
+
+//@Reducer
+struct AppFeature {
+    
+}

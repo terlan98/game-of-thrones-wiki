@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65A96E242BAF479000FE11EF /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A96E232BAF479000FE11EF /* AppFeature.swift */; };
+		65A96E272BAF485E00FE11EF /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A96E262BAF485E00FE11EF /* CharactersView.swift */; };
+		65A96E292BAF488000FE11EF /* CharactersFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A96E282BAF488000FE11EF /* CharactersFeature.swift */; };
+		65A96E2B2BAF48EA00FE11EF /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A96E2A2BAF48EA00FE11EF /* Character.swift */; };
+		65A96E2D2BAF520B00FE11EF /* CharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A96E2C2BAF520B00FE11EF /* CharactersService.swift */; };
 		65E626A82BAE049B00D6CBE7 /* GameOfThronesWikiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E626A72BAE049B00D6CBE7 /* GameOfThronesWikiApp.swift */; };
 		65E626AA2BAE049B00D6CBE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E626A92BAE049B00D6CBE7 /* ContentView.swift */; };
 		65E626AC2BAE049F00D6CBE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E626AB2BAE049F00D6CBE7 /* Assets.xcassets */; };
@@ -35,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		65A96E232BAF479000FE11EF /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
+		65A96E262BAF485E00FE11EF /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
+		65A96E282BAF488000FE11EF /* CharactersFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersFeature.swift; sourceTree = "<group>"; };
+		65A96E2A2BAF48EA00FE11EF /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		65A96E2C2BAF520B00FE11EF /* CharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersService.swift; sourceTree = "<group>"; };
 		65E626A42BAE049B00D6CBE7 /* GameOfThronesWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfThronesWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E626A72BAE049B00D6CBE7 /* GameOfThronesWikiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOfThronesWikiApp.swift; sourceTree = "<group>"; };
 		65E626A92BAE049B00D6CBE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +83,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65A96E252BAF483500FE11EF /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				65A96E2E2BAF59A400FE11EF /* View */,
+				65A96E282BAF488000FE11EF /* CharactersFeature.swift */,
+				65A96E2A2BAF48EA00FE11EF /* Character.swift */,
+				65A96E2C2BAF520B00FE11EF /* CharactersService.swift */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		65A96E2E2BAF59A400FE11EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				65A96E262BAF485E00FE11EF /* CharactersView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		65E6269B2BAE049B00D6CBE7 = {
 			isa = PBXGroup;
 			children = (
@@ -96,10 +125,12 @@
 		65E626A62BAE049B00D6CBE7 /* GameOfThronesWiki */ = {
 			isa = PBXGroup;
 			children = (
+				65A96E252BAF483500FE11EF /* Characters */,
 				65E626A72BAE049B00D6CBE7 /* GameOfThronesWikiApp.swift */,
 				65E626A92BAE049B00D6CBE7 /* ContentView.swift */,
 				65E626AB2BAE049F00D6CBE7 /* Assets.xcassets */,
 				65E626AD2BAE049F00D6CBE7 /* Preview Content */,
+				65A96E232BAF479000FE11EF /* AppFeature.swift */,
 			);
 			path = GameOfThronesWiki;
 			sourceTree = "<group>";
@@ -265,7 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65A96E2D2BAF520B00FE11EF /* CharactersService.swift in Sources */,
+				65A96E292BAF488000FE11EF /* CharactersFeature.swift in Sources */,
+				65A96E242BAF479000FE11EF /* AppFeature.swift in Sources */,
 				65E626AA2BAE049B00D6CBE7 /* ContentView.swift in Sources */,
+				65A96E2B2BAF48EA00FE11EF /* Character.swift in Sources */,
+				65A96E272BAF485E00FE11EF /* CharactersView.swift in Sources */,
 				65E626A82BAE049B00D6CBE7 /* GameOfThronesWikiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

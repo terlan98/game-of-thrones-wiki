@@ -6,20 +6,25 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 // https://gameofthronesquotes.xyz
-// http://thronesapi.com
 
 struct ContentView: View {
+    static let store = Store(initialState: CharactersFeature.State()) {
+        CharactersFeature()
+        ._printChanges()
+    } // TODO: move to GameOfThronesWikiApp.swift
+
     var body: some View {
         TabView {
-            Text("TAB 1")
+            CharactersView(store: Self.store)
                 .tabItem {
                     Image(systemName: "person.3.fill")
                     Text("Characters")
                 }
             
-            Text("TAB 2")
+            CharactersView(store: Self.store)
                 .tabItem {
                     Image(systemName: "star.fill")
                     Text("Favorites")
