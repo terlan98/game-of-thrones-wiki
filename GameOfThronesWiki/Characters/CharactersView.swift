@@ -8,12 +8,14 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct CharactersView: View {
+struct CharactersView: View { // TODO: handle loading state
     let store: StoreOf<CharactersFeature>
+    let quoteStore: StoreOf<QuoteFeature>
     
     var body: some View {
         NavigationStack {
             ScrollView {
+                QuoteView(store: quoteStore)
                 VStack(alignment: .leading, spacing: 16) {
                     ForEach(store.characters) { character in
                         CharacterCellView(character: character)
@@ -61,5 +63,7 @@ struct CharacterCellView: View {
 #Preview {
     CharactersView(store: Store(initialState: CharactersFeature.State()) {
         CharactersFeature()
+    }, quoteStore: Store(initialState: QuoteFeature.State()) {
+        QuoteFeature()
     })
 }
