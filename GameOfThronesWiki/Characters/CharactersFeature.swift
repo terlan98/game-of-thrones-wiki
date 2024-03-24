@@ -8,14 +8,13 @@
 import ComposableArchitecture
 import OSLog
 
-// TODO: write tests
 @Reducer
 struct CharactersFeature {
     private var logger = Logger(subsystem: "GameOfThronesWiki", category: "CharactersFeature")
     @Dependency(\.charactersService) var charactersService
     
     @ObservableState
-    struct State {
+    struct State: Equatable {
         var characters: IdentifiedArrayOf<Character> = []
         var isLoading = false
         var fetchFailed = false
@@ -48,6 +47,7 @@ struct CharactersFeature {
                         await send(.charactersFetched(characters))
                     } catch {
                         logger.error("Could not fetch characters: \(error)") // TODO: user error handling (manual retry)
+                        await send(.fetchFailed)
                     }
                 }
                 

@@ -15,7 +15,7 @@ struct QuoteFeature {
     @Dependency(\.quoteService) var quoteService
     
     @ObservableState
-    struct State {
+    struct State: Equatable {
         var quote: Quote?
         var isLoading = false
         var fetchFailed = false

@@ -16,11 +16,11 @@
 		65A96E342BAF62AB00FE11EF /* QuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A96E332BAF62AB00FE11EF /* QuoteService.swift */; };
 		65A96E372BAF643700FE11EF /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A96E362BAF643700FE11EF /* QuoteView.swift */; };
 		65A96E392BAF644300FE11EF /* QuoteFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A96E382BAF644300FE11EF /* QuoteFeature.swift */; };
+		65A9D1212BB00EB1006662A6 /* CharactersFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9D1202BB00EB1006662A6 /* CharactersFeatureTests.swift */; };
 		65E626A82BAE049B00D6CBE7 /* GameOfThronesWikiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E626A72BAE049B00D6CBE7 /* GameOfThronesWikiApp.swift */; };
 		65E626AA2BAE049B00D6CBE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E626A92BAE049B00D6CBE7 /* ContentView.swift */; };
 		65E626AC2BAE049F00D6CBE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E626AB2BAE049F00D6CBE7 /* Assets.xcassets */; };
 		65E626AF2BAE049F00D6CBE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E626AE2BAE049F00D6CBE7 /* Preview Assets.xcassets */; };
-		65E626B92BAE04A000D6CBE7 /* GameOfThronesWikiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E626B82BAE04A000D6CBE7 /* GameOfThronesWikiTests.swift */; };
 		65E626C32BAE04A000D6CBE7 /* GameOfThronesWikiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E626C22BAE04A000D6CBE7 /* GameOfThronesWikiUITests.swift */; };
 		65E626C52BAE04A000D6CBE7 /* GameOfThronesWikiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E626C42BAE04A000D6CBE7 /* GameOfThronesWikiUITestsLaunchTests.swift */; };
 		65E626D32BAE089400D6CBE7 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 65E626D22BAE089400D6CBE7 /* ComposableArchitecture */; };
@@ -53,13 +53,13 @@
 		65A96E332BAF62AB00FE11EF /* QuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteService.swift; sourceTree = "<group>"; };
 		65A96E362BAF643700FE11EF /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		65A96E382BAF644300FE11EF /* QuoteFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteFeature.swift; sourceTree = "<group>"; };
+		65A9D1202BB00EB1006662A6 /* CharactersFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersFeatureTests.swift; sourceTree = "<group>"; };
 		65E626A42BAE049B00D6CBE7 /* GameOfThronesWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfThronesWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E626A72BAE049B00D6CBE7 /* GameOfThronesWikiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOfThronesWikiApp.swift; sourceTree = "<group>"; };
 		65E626A92BAE049B00D6CBE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		65E626AB2BAE049F00D6CBE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65E626AE2BAE049F00D6CBE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		65E626B42BAE04A000D6CBE7 /* GameOfThronesWikiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameOfThronesWikiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		65E626B82BAE04A000D6CBE7 /* GameOfThronesWikiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOfThronesWikiTests.swift; sourceTree = "<group>"; };
 		65E626BE2BAE04A000D6CBE7 /* GameOfThronesWikiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameOfThronesWikiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E626C22BAE04A000D6CBE7 /* GameOfThronesWikiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOfThronesWikiUITests.swift; sourceTree = "<group>"; };
 		65E626C42BAE04A000D6CBE7 /* GameOfThronesWikiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOfThronesWikiUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 		65E626B72BAE04A000D6CBE7 /* GameOfThronesWikiTests */ = {
 			isa = PBXGroup;
 			children = (
-				65E626B82BAE04A000D6CBE7 /* GameOfThronesWikiTests.swift */,
+				65A9D1202BB00EB1006662A6 /* CharactersFeatureTests.swift */,
 			);
 			path = GameOfThronesWikiTests;
 			sourceTree = "<group>";
@@ -326,7 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65E626B92BAE04A000D6CBE7 /* GameOfThronesWikiTests.swift in Sources */,
+				65A9D1212BB00EB1006662A6 /* CharactersFeatureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
