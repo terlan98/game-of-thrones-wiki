@@ -10,12 +10,11 @@ import ComposableArchitecture
 
 struct CharactersView: View {
     let store: StoreOf<CharactersFeature>
-    let quoteStore: StoreOf<QuoteFeature>
     
     var body: some View {
         NavigationStack {
             ScrollView {
-                QuoteView(store: quoteStore)
+                QuoteView(store: store.scope(state: \.quote, action: \.quote))
                 
                 charactersList
             }
@@ -74,7 +73,5 @@ struct CharacterCellView: View {
 #Preview {
     CharactersView(store: Store(initialState: CharactersFeature.State()) {
         CharactersFeature()
-    }, quoteStore: Store(initialState: QuoteFeature.State()) {
-        QuoteFeature()
     })
 }

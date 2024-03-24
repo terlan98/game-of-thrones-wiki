@@ -19,15 +19,21 @@ struct CharactersFeature {
         var characters: IdentifiedArrayOf<Character> = []
         var isLoading = false
         var fetchFailed = false
+        var quote = QuoteFeature.State()
     }
     
     enum Action {
         case fetchTriggered
         case charactersFetched(IdentifiedArrayOf<Character>)
         case fetchFailed
+        case quote(QuoteFeature.Action)
     }
     
     var body: some ReducerOf<Self> {
+        Scope(state: \.quote, action: \.quote) {
+            QuoteFeature()
+        }
+        
         Reduce { state, action in
             switch action {
             case .fetchTriggered:
@@ -53,6 +59,9 @@ struct CharactersFeature {
             case .fetchFailed:
                 state.isLoading = false
                 state.fetchFailed = true
+                return .none
+                
+            case .quote:
                 return .none
             }
         }
