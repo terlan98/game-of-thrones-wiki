@@ -8,14 +8,20 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct QuoteView: View { // TODO: handle loading state
+struct QuoteView: View {
     let store: StoreOf<QuoteFeature>
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 6) {
             titleAndFetchButton
-            quoteSentence
-            quoteAuthor
+            
+            if store.isLoading {
+                ProgressView()
+                    .frame(maxWidth: .infinity)
+            } else {
+                quoteSentence
+                quoteAuthor
+            }
         }
         .onAppear {
             store.send(.fetchTriggered)
@@ -35,7 +41,7 @@ struct QuoteView: View { // TODO: handle loading state
                 .textCase(.uppercase)
                 .font(.system(size: 12, weight: .semibold))
                 .foregroundStyle(.secondary.opacity(0.7))
-                .padding(.bottom, 4)
+                .padding(.bottom, 1)
             
             Spacer()
             

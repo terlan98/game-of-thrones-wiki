@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct CharactersView: View { // TODO: handle loading state
+struct CharactersView: View {
     let store: StoreOf<CharactersFeature>
     let quoteStore: StoreOf<QuoteFeature>
     
@@ -16,23 +16,34 @@ struct CharactersView: View { // TODO: handle loading state
         NavigationStack {
             ScrollView {
                 QuoteView(store: quoteStore)
-                VStack(alignment: .leading, spacing: 16) {
-                    ForEach(store.characters) { character in
-                        CharacterCellView(character: character)
-                    }
-                }
-                .padding()
-                .background {
-                    RoundedRectangle(cornerRadius: 16)
-                        .foregroundStyle(Color.cyan.opacity(0.2))
-                }
-                .padding()
+                
+                charactersList
             }
             .navigationTitle("Characters")
         }
         .onAppear {
             store.send(.fetchTriggered)
         }
+    }
+    
+    @ViewBuilder
+    private var charactersList: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            if store.isLoading {
+                ProgressView()
+                    .frame(maxWidth: .infinity)
+            } else {
+                ForEach(store.characters) { character in
+                    CharacterCellView(character: character)
+                }
+            }
+        }
+        .padding()
+        .background {
+            RoundedRectangle(cornerRadius: 16)
+                .foregroundStyle(Color.cyan.opacity(0.2))
+        }
+        .padding()
     }
 }
 
