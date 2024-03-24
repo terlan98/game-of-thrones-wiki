@@ -18,6 +18,8 @@
 		65A96E392BAF644300FE11EF /* QuoteFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A96E382BAF644300FE11EF /* QuoteFeature.swift */; };
 		65A9D1212BB00EB1006662A6 /* CharactersFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9D1202BB00EB1006662A6 /* CharactersFeatureTests.swift */; };
 		65E592CD2BB014CC002C1C5F /* QuoteFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E592CC2BB014CC002C1C5F /* QuoteFeatureTests.swift */; };
+		65E592CF2BB02567002C1C5F /* CharactersErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E592CE2BB02567002C1C5F /* CharactersErrorView.swift */; };
+		65E592D12BB028ED002C1C5F /* QuoteErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E592D02BB028ED002C1C5F /* QuoteErrorView.swift */; };
 		65E626A82BAE049B00D6CBE7 /* GameOfThronesWikiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E626A72BAE049B00D6CBE7 /* GameOfThronesWikiApp.swift */; };
 		65E626AA2BAE049B00D6CBE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E626A92BAE049B00D6CBE7 /* ContentView.swift */; };
 		65E626AC2BAE049F00D6CBE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E626AB2BAE049F00D6CBE7 /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		65A96E382BAF644300FE11EF /* QuoteFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteFeature.swift; sourceTree = "<group>"; };
 		65A9D1202BB00EB1006662A6 /* CharactersFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersFeatureTests.swift; sourceTree = "<group>"; };
 		65E592CC2BB014CC002C1C5F /* QuoteFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteFeatureTests.swift; sourceTree = "<group>"; };
+		65E592CE2BB02567002C1C5F /* CharactersErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersErrorView.swift; sourceTree = "<group>"; };
+		65E592D02BB028ED002C1C5F /* QuoteErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteErrorView.swift; sourceTree = "<group>"; };
 		65E626A42BAE049B00D6CBE7 /* GameOfThronesWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfThronesWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E626A72BAE049B00D6CBE7 /* GameOfThronesWikiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOfThronesWikiApp.swift; sourceTree = "<group>"; };
 		65E626A92BAE049B00D6CBE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			children = (
 				65A96E2A2BAF48EA00FE11EF /* Character.swift */,
 				65A96E262BAF485E00FE11EF /* CharactersView.swift */,
+				65E592CE2BB02567002C1C5F /* CharactersErrorView.swift */,
 				65A96E282BAF488000FE11EF /* CharactersFeature.swift */,
 				65A96E2C2BAF520B00FE11EF /* CharactersService.swift */,
 			);
@@ -90,6 +95,7 @@
 			children = (
 				65A96E302BAF625900FE11EF /* Quote.swift */,
 				65A96E362BAF643700FE11EF /* QuoteView.swift */,
+				65E592D02BB028ED002C1C5F /* QuoteErrorView.swift */,
 				65A96E382BAF644300FE11EF /* QuoteFeature.swift */,
 				65A96E332BAF62AB00FE11EF /* QuoteService.swift */,
 			);
@@ -252,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65A96E2D2BAF520B00FE11EF /* CharactersService.swift in Sources */,
+				65E592D12BB028ED002C1C5F /* QuoteErrorView.swift in Sources */,
 				65A96E372BAF643700FE11EF /* QuoteView.swift in Sources */,
 				65A96E342BAF62AB00FE11EF /* QuoteService.swift in Sources */,
 				65A96E292BAF488000FE11EF /* CharactersFeature.swift in Sources */,
@@ -260,6 +267,7 @@
 				65A96E312BAF625900FE11EF /* Quote.swift in Sources */,
 				65A96E392BAF644300FE11EF /* QuoteFeature.swift in Sources */,
 				65A96E2B2BAF48EA00FE11EF /* Character.swift in Sources */,
+				65E592CF2BB02567002C1C5F /* CharactersErrorView.swift in Sources */,
 				65A96E272BAF485E00FE11EF /* CharactersView.swift in Sources */,
 				65E626A82BAE049B00D6CBE7 /* GameOfThronesWikiApp.swift in Sources */,
 			);
@@ -415,6 +423,7 @@
 				DEVELOPMENT_TEAM = N422BWS4VH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Thrones Wiki";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -444,6 +453,7 @@
 				DEVELOPMENT_TEAM = N422BWS4VH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Thrones Wiki";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

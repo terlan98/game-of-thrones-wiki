@@ -18,6 +18,8 @@ struct QuoteView: View {
             if store.isLoading {
                 ProgressView()
                     .frame(maxWidth: .infinity)
+            } else if store.fetchFailed {
+                QuoteErrorView()
             } else {
                 quoteSentence
                 quoteAuthor
@@ -57,7 +59,7 @@ struct QuoteView: View {
     
     @ViewBuilder
     private var quoteSentence: some View {
-        Text(store.quote?.sentence ?? "-")
+        Text("\"\(store.quote?.sentence ?? "-")\"")
             .foregroundStyle(.primary.opacity(0.7))
             .font(.custom("BradleyHandITCTT-Bold", size: 20))
     }
