@@ -38,6 +38,15 @@ extension QuoteService {
     )
 }
 
+//MARK: - Test Implementation -
+extension QuoteService {
+    static let testValue = Self(
+        fetch: {
+            return .init(sentence: "Sentence Test", character: .init(name:"Author Test"))
+        }
+    )
+}
+
 extension DependencyValues {
     var quoteService: QuoteService {
         get { self[QuoteService.self] }

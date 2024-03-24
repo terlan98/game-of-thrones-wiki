@@ -43,6 +43,7 @@ struct QuoteFeature {
                         await send(.quoteFetched(quote))
                     } catch {
                         logger.error("Could not fetch quote: \(error)") // TODO: user error handling (manual retry)
+                        await send(.fetchFailed)
                     }
                 }
                 

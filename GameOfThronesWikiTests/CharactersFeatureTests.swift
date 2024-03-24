@@ -54,7 +54,6 @@ final class CharactersFeatureTests: XCTestCase {
             CharactersFeature()
         } withDependencies: {
             $0.charactersService.fetch = { throw URLError(.badURL) }
-            $0.quoteService.fetch = { Quote(sentence: "Test", character: .init(name: "Author")) }
         }
         
         await store.send(.fetchTriggered) {
