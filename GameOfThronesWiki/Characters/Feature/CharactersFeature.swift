@@ -19,6 +19,8 @@ struct CharactersFeature {
         var isLoading = false
         var fetchFailed = false
         var quote = QuoteFeature.State()
+        
+        var path = StackState<CharacterDetailFeature.State>()
     }
     
     enum Action {
@@ -26,6 +28,8 @@ struct CharactersFeature {
         case charactersFetched(IdentifiedArrayOf<Character>)
         case fetchFailed
         case quote(QuoteFeature.Action)
+        
+        case path(StackAction<CharacterDetailFeature.State, CharacterDetailFeature.Action>)
     }
     
     var body: some ReducerOf<Self> {
@@ -46,7 +50,7 @@ struct CharactersFeature {
                         let characters = try await charactersService.fetch()
                         await send(.charactersFetched(characters))
                     } catch {
-                        logger.error("Could not fetch characters: \(error)") // TODO: user error handling (manual retry)
+                        logger.error("Could not fetch characters: \(error)")
                         await send(.fetchFailed)
                     }
                 }
@@ -61,10 +65,16 @@ struct CharactersFeature {
                 state.fetchFailed = true
                 return .none
                 
-            case .quote:
+            case .quote, .path:
                 return .none
             }
         }
+        .forEach(\.path, action: \.path) {
+            CharacterDetailFeature()
+        }
+        //        .ifLet(\.$detail, action: \.detail) {
+        //            CharacterDetailFeature()
+        //        }
     }
 }
 

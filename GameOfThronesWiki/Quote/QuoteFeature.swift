@@ -8,7 +8,6 @@
 import ComposableArchitecture
 import OSLog
 
-// TODO: write tests
 @Reducer
 struct QuoteFeature {
     private var logger = Logger(subsystem: "GameOfThronesWiki", category: "QuoteFeature")
@@ -17,6 +16,7 @@ struct QuoteFeature {
     @ObservableState
     struct State: Equatable {
         var quote: Quote?
+        var character: Character?
         var isLoading = false
         var fetchFailed = false
     }
@@ -37,12 +37,18 @@ struct QuoteFeature {
                 state.fetchFailed = false
                 state.isLoading = true
                 
-                return .run { send in
+                return .run { [character = state.character] send in
                     do {
-                        let quote = try await quoteService.fetch()
+                        let quote: Quote
+                        
+                        if let characterFirstName = character?.firstName {
+                            quote = try await quoteService.fetchForCharacterFirstName(characterFirstName)
+                        } else {
+                            quote = try await quoteService.fetch()
+                        }
                         await send(.quoteFetched(quote))
                     } catch {
-                        logger.error("Could not fetch quote: \(error)") // TODO: user error handling (manual retry)
+                        logger.error("Could not fetch quote: \(error)")
                         await send(.fetchFailed)
                     }
                 }

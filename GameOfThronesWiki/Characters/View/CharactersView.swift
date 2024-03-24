@@ -9,16 +9,18 @@ import SwiftUI
 import ComposableArchitecture
 
 struct CharactersView: View {
-    let store: StoreOf<CharactersFeature>
+    @Bindable var store: StoreOf<CharactersFeature>
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
             ScrollView {
                 QuoteView(store: store.scope(state: \.quote, action: \.quote))
                 
                 charactersList
             }
             .navigationTitle("Characters")
+        } destination: { store in
+            CharacterDetailView(store: store)
         }
         .onAppear {
             store.send(.fetchTriggered)
@@ -38,7 +40,10 @@ struct CharactersView: View {
                 }
             } else {
                 ForEach(store.characters) { character in
-                    CharacterCellView(character: character)
+                    NavigationLink(state: CharacterDetailFeature.State(character: character, quote: QuoteFeature.State(character: character))) {
+                        CharacterCellView(character: character)
+                    }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
         }
@@ -46,7 +51,7 @@ struct CharactersView: View {
         .background {
             RoundedRectangle(cornerRadius: 16)
                 .foregroundStyle(Color.cyan)
-                .opacity(store.fetchFailed ? 0 : 0.2)
+                .opacity(store.fetchFailed ? 0 : 0.1)
         }
         .padding()
     }
@@ -71,9 +76,9 @@ struct CharacterCellView: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 2) {
                 Text(character.fullName)
-                    .font(.system(size: 22, weight: .semibold))
+                    .font(.system(size: 20, weight: .medium))
                 
                 Text(character.title)
                     .font(.system(size: 14, weight: .light))
@@ -86,7 +91,6 @@ struct CharacterCellView: View {
             RoundedRectangle(cornerRadius: 12)
                 .foregroundStyle(.background)
         }
-        .padding(.horizontal, 2)
     }
 }
 
