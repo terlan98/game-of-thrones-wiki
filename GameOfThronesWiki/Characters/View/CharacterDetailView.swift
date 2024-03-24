@@ -18,12 +18,12 @@ struct CharacterDetailView: View {
             
             VStack {
                 Text(store.character.title)
-                    .font(.system(size: 20, weight: .light))
+                    .font(.system(size: 18, weight: .light))
                     .textCase(.uppercase)
                 
-                houseInfo
-                
                 QuoteView(store: store.scope(state: \.quote, action: \.quote))
+                
+                HouseView(house: store.character.family)
             }
             .background(in: .rect)
             
@@ -49,14 +49,6 @@ struct CharacterDetailView: View {
 //            .frame(maxWidth: 125, maxHeight: 125)
 //            .clipShape(.rect(cornerRadius: 16))
     }
-    
-    @ViewBuilder
-    private var houseInfo: some View {
-        VStack {
-            Text(store.character.family)
-        }
-        .padding()
-    }
 }
 
 #Preview {
@@ -68,7 +60,7 @@ struct CharacterDetailView: View {
                           lastName: "Snow",
                           fullName: "Jon Snow",
                           title: "King of the North",
-                          family: "Stark",
+                          family: .stark,
                           image: "jon-snow.jpg",
                           imageUrl: "https://thronesapi.com/assets/images/jon-snow.jpg"))
         ) {

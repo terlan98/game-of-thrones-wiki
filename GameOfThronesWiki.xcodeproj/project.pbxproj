@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		65931BA02BB0772A0041FDFA /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65931B9F2BB0772A0041FDFA /* CharacterDetailView.swift */; };
 		65931BA32BB077710041FDFA /* CharacterDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65931BA22BB077710041FDFA /* CharacterDetailFeature.swift */; };
+		65931BA82BB0A1AB0041FDFA /* HouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65931BA72BB0A1AB0041FDFA /* HouseView.swift */; };
+		65931BAA2BB0A1DE0041FDFA /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65931BA92BB0A1DE0041FDFA /* House.swift */; };
 		65A96E242BAF479000FE11EF /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A96E232BAF479000FE11EF /* AppFeature.swift */; };
 		65A96E272BAF485E00FE11EF /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A96E262BAF485E00FE11EF /* CharactersView.swift */; };
 		65A96E292BAF488000FE11EF /* CharactersFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A96E282BAF488000FE11EF /* CharactersFeature.swift */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		65931B9F2BB0772A0041FDFA /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		65931BA22BB077710041FDFA /* CharacterDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailFeature.swift; sourceTree = "<group>"; };
+		65931BA72BB0A1AB0041FDFA /* HouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseView.swift; sourceTree = "<group>"; };
+		65931BA92BB0A1DE0041FDFA /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		65A96E232BAF479000FE11EF /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 		65A96E262BAF485E00FE11EF /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
 		65A96E282BAF488000FE11EF /* CharactersFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersFeature.swift; sourceTree = "<group>"; };
@@ -91,12 +95,21 @@
 			path = Feature;
 			sourceTree = "<group>";
 		};
+		65931BAB2BB0A1EA0041FDFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				65A96E2A2BAF48EA00FE11EF /* Character.swift */,
+				65931BA92BB0A1DE0041FDFA /* House.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		65A96E252BAF483500FE11EF /* Characters */ = {
 			isa = PBXGroup;
 			children = (
 				65931BA12BB077620041FDFA /* Feature */,
 				65C898FF2BB076A400E1DAA0 /* View */,
-				65A96E2A2BAF48EA00FE11EF /* Character.swift */,
+				65931BAB2BB0A1EA0041FDFA /* Model */,
 				65A96E2C2BAF520B00FE11EF /* CharactersService.swift */,
 			);
 			path = Characters;
@@ -119,6 +132,7 @@
 				65E592CE2BB02567002C1C5F /* CharactersErrorView.swift */,
 				65A96E262BAF485E00FE11EF /* CharactersView.swift */,
 				65931B9F2BB0772A0041FDFA /* CharacterDetailView.swift */,
+				65931BA72BB0A1AB0041FDFA /* HouseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -288,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65931BA32BB077710041FDFA /* CharacterDetailFeature.swift in Sources */,
+				65931BAA2BB0A1DE0041FDFA /* House.swift in Sources */,
 				65A96E2D2BAF520B00FE11EF /* CharactersService.swift in Sources */,
 				65E592D12BB028ED002C1C5F /* QuoteErrorView.swift in Sources */,
 				65A96E372BAF643700FE11EF /* QuoteView.swift in Sources */,
@@ -296,6 +311,7 @@
 				65A96E292BAF488000FE11EF /* CharactersFeature.swift in Sources */,
 				65A96E242BAF479000FE11EF /* AppFeature.swift in Sources */,
 				65E626AA2BAE049B00D6CBE7 /* ContentView.swift in Sources */,
+				65931BA82BB0A1AB0041FDFA /* HouseView.swift in Sources */,
 				65A96E312BAF625900FE11EF /* Quote.swift in Sources */,
 				65A96E392BAF644300FE11EF /* QuoteFeature.swift in Sources */,
 				65A96E2B2BAF48EA00FE11EF /* Character.swift in Sources */,
