@@ -9,20 +9,17 @@ import SwiftUI
 import ComposableArchitecture
 
 struct ContentView: View {
-    static let store = Store(initialState: CharactersFeature.State()) {
-        CharactersFeature()
-        ._printChanges()
-    } // TODO: move to GameOfThronesWikiApp.swift
+    let store: StoreOf<TabFeature>
     
     var body: some View {
         TabView {
-            CharactersView(store: Self.store)
+            CharactersView(store: store.scope(state: \.tab1, action: \.tab1))
                 .tabItem {
                     Image(systemName: "person.3.fill")
                     Text("Characters")
                 }
             
-            CharactersView(store: Self.store)
+            FavoritesView(store: store.scope(state: \.tab2, action: \.tab2))
                 .tabItem {
                     Image(systemName: "star.fill")
                     Text("Favorites")
@@ -32,5 +29,9 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(
+        store: Store(initialState: TabFeature.State()) {
+            TabFeature()
+        }
+    )
 }

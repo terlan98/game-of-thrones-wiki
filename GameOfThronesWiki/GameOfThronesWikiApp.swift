@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct GameOfThronesWikiApp: App {
+    static let store = Store(initialState: TabFeature.State()) {
+        TabFeature()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(store: Self.store)
         }
     }
 }
