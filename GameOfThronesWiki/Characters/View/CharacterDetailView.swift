@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct CharacterDetailView: View {
-    let store: StoreOf<CharacterDetailFeature>
+    @Bindable var store: StoreOf<CharacterDetailFeature>
     
     var body: some View {
         VStack (spacing: 12) {
@@ -21,6 +21,8 @@ struct CharacterDetailView: View {
                     .font(.system(size: 18, weight: .light))
                     .textCase(.uppercase)
                 
+                toggleFavoritesButton
+                
                 QuoteView(store: store.scope(state: \.quote, action: \.quote))
                 
                 HouseView(house: store.character.family)
@@ -30,6 +32,9 @@ struct CharacterDetailView: View {
             Spacer()
         }
         .navigationBarTitle(Text(store.character.fullName))
+        .onAppear {
+            store.send(.fetchFavoriteStatus)
+        }
     }
     
     @ViewBuilder
@@ -43,11 +48,24 @@ struct CharacterDetailView: View {
         } placeholder: {
             ProgressView()
         }
-//        Image(systemName: "squareshape.dashed.squareshape")
-//            .resizable()
-//            .scaledToFill()
-//            .frame(maxWidth: 125, maxHeight: 125)
-//            .clipShape(.rect(cornerRadius: 16))
+    }
+    
+    @ViewBuilder
+    private var toggleFavoritesButton: some View {
+        Button(action: {
+            store.send(.favoriteButtonTapped)
+        }, label: {
+            HStack {
+                Image(systemName: store.isFavorite ? "star.circle" : "star.circle.fill")
+                    .font(.system(size: 20, weight: .regular))
+                Text(store.isFavorite ? "Remove from Favorites" : "Add to Favorites")
+                    .textCase(.uppercase)
+            }
+            .font(.system(size: 14, weight: .semibold))
+            .padding(12)
+            .background(in: .rect(cornerRadius: 10))
+            .backgroundStyle(.tertiary.opacity(0.25))
+        })
     }
 }
 

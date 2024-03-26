@@ -12,6 +12,7 @@ import ComposableArchitecture
 struct GameOfThronesWikiApp: App {
     static let store = Store(initialState: TabFeature.State()) {
         TabFeature()
+//            ._printChanges()
     }
     
     var body: some Scene {

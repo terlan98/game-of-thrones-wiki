@@ -48,6 +48,7 @@ struct CharactersFeature {
                 return .run { send in
                     do {
                         let characters = try await charactersService.fetch()
+                        logger.info("Fetched \(characters.count) characters")
                         await send(.charactersFetched(characters))
                     } catch {
                         logger.error("Could not fetch characters: \(error)")
@@ -72,9 +73,6 @@ struct CharactersFeature {
         .forEach(\.path, action: \.path) {
             CharacterDetailFeature()
         }
-        //        .ifLet(\.$detail, action: \.detail) {
-        //            CharacterDetailFeature()
-        //        }
     }
 }
 

@@ -11,12 +11,12 @@ import ComposableArchitecture
 struct TabFeature {
     struct State: Equatable {
         var tab1 = CharactersFeature.State()
-        var tab2 = CharactersFeature.State()
+        var tab2 = FavoritesFeature.State()
     }
     
     enum Action {
         case tab1(CharactersFeature.Action)
-        case tab2(CharactersFeature.Action)
+        case tab2(FavoritesFeature.Action)
     }
     
     var body: some ReducerOf<Self> {
@@ -24,7 +24,7 @@ struct TabFeature {
             CharactersFeature()
         }
         Scope(state: \.tab2, action: \.tab2) {
-            CharactersFeature()
+            FavoritesFeature()
         }
         Reduce { state, action in
             return .none
