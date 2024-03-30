@@ -15,7 +15,6 @@ struct FavoritesService {
     var save: (IdentifiedArrayOf<Character>) -> ()
     var add: (Character) -> IdentifiedArrayOf<Character>
     var remove: (Character) -> IdentifiedArrayOf<Character>
-    var exists: (Character) -> Bool // TODO: remove if unused
     var fetch: () -> IdentifiedArrayOf<Character>
 }
 
@@ -46,9 +45,6 @@ extension FavoritesService: DependencyKey {
                 return favorites
             }
             return []
-        },
-        exists: { character in
-            return Self.fetchFromUserDefaults()?.contains(character) ?? false
         },
         fetch: {
             return Self.fetchFromUserDefaults() ?? []
@@ -84,9 +80,6 @@ extension FavoritesService {
         remove: { character in
             previewFavorites.remove(character)
             return previewFavorites
-        },
-        exists: { character in
-            previewFavorites.contains(character)
         },
         fetch: {
             return [
