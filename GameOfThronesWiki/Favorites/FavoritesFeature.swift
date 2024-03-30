@@ -48,7 +48,7 @@ struct FavoritesFeature {
                 return .send(.favoritesFetched(characters))
                     .concatenate(with: .send(.delegate(.favoritesFetched(characters))))
                 
-            case let .favoritesFetched(characters): // TODO: extract to a syncFavorites()
+            case let .favoritesFetched(characters):
                 state.isLoading = false
                 state.favorites = characters
                 

@@ -14,14 +14,14 @@ struct FavoritesView: View {
     var body: some View {
         NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
             ScrollView {
-                favoritesList // FIXME: does not update when navigating back from a CharacterDetailView
+                favoritesList
             }
             .navigationTitle("Favorites")
+            .onAppear {
+                store.send(.fetchFavorites)
+            }
         } destination: { store in
             CharacterDetailView(store: store)
-        }
-        .onAppear {
-            store.send(.fetchFavorites)
         }
     }
     
