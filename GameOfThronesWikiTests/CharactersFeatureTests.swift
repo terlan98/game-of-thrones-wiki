@@ -19,7 +19,7 @@ final class CharactersFeatureTests: XCTestCase {
                           lastName: "Targaryen",
                           fullName: "Daenerys Targaryen",
                           title: "Mother of Dragons",
-                          family: "House Targaryen",
+                          family: .targaryen,
                           image: "daenerys.jpg",
                           imageUrl: "https://thronesapi.com/assets/images/daenerys.jpg"),
                 Character(id: 1,
@@ -27,7 +27,7 @@ final class CharactersFeatureTests: XCTestCase {
                           lastName: "Tarly",
                           fullName: "Samwell Tarly",
                           title: "Maester",
-                          family: "House Tarly",
+                          family: .tarly,
                           image: "sam.jpg",
                           imageUrl: "https://thronesapi.com/assets/images/sam.jpg")
             ]

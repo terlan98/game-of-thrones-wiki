@@ -104,6 +104,13 @@ extension CharactersService {
     )
 }
 
+//MARK: - Preview Implementation -
+extension CharactersService {
+    static let testValue = Self(
+        fetch: { [] }
+    )
+}
+
 extension DependencyValues {
     var charactersService: CharactersService {
         get { self[CharactersService.self] }
