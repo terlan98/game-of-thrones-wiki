@@ -32,7 +32,7 @@ struct FavoritesView: View {
                 ProgressView()
                     .frame(maxWidth: .infinity)
             } else if store.favorites.isEmpty {
-//                    FavoritesErrorView() // TODO: implement
+                FavoritesEmptyView()
             } else {
                 ForEach(store.favorites) { character in
                     NavigationLink(state: CharacterDetailFeature.State(character: character, quote: QuoteFeature.State(character: character))) {

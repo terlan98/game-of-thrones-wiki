@@ -10,6 +10,7 @@
 		652AFF722BB1C83A003A002A /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652AFF712BB1C83A003A002A /* FavoritesView.swift */; };
 		652AFF742BB1C9F9003A002A /* FavoritesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652AFF732BB1C9F9003A002A /* FavoritesFeature.swift */; };
 		652AFF762BB1D03B003A002A /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652AFF752BB1D03B003A002A /* FavoritesService.swift */; };
+		6574FC172BB869BE0090646E /* FavoritesEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6574FC162BB869BE0090646E /* FavoritesEmptyView.swift */; };
 		65931BA02BB0772A0041FDFA /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65931B9F2BB0772A0041FDFA /* CharacterDetailView.swift */; };
 		65931BA32BB077710041FDFA /* CharacterDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65931BA22BB077710041FDFA /* CharacterDetailFeature.swift */; };
 		65931BA82BB0A1AB0041FDFA /* HouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65931BA72BB0A1AB0041FDFA /* HouseView.swift */; };
@@ -48,6 +49,7 @@
 		652AFF712BB1C83A003A002A /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		652AFF732BB1C9F9003A002A /* FavoritesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesFeature.swift; sourceTree = "<group>"; };
 		652AFF752BB1D03B003A002A /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
+		6574FC162BB869BE0090646E /* FavoritesEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesEmptyView.swift; sourceTree = "<group>"; };
 		65931B9F2BB0772A0041FDFA /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		65931BA22BB077710041FDFA /* CharacterDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailFeature.swift; sourceTree = "<group>"; };
 		65931BA72BB0A1AB0041FDFA /* HouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				652AFF712BB1C83A003A002A /* FavoritesView.swift */,
 				652AFF732BB1C9F9003A002A /* FavoritesFeature.swift */,
 				652AFF752BB1D03B003A002A /* FavoritesService.swift */,
+				6574FC162BB869BE0090646E /* FavoritesEmptyView.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				65A96E2B2BAF48EA00FE11EF /* Character.swift in Sources */,
 				65E592CF2BB02567002C1C5F /* CharactersErrorView.swift in Sources */,
 				65A96E272BAF485E00FE11EF /* CharactersView.swift in Sources */,
+				6574FC172BB869BE0090646E /* FavoritesEmptyView.swift in Sources */,
 				65E626A82BAE049B00D6CBE7 /* GameOfThronesWikiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

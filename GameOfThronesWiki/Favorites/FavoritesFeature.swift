@@ -9,7 +9,7 @@ import ComposableArchitecture
 import OSLog
 
 @Reducer
-struct FavoritesFeature {
+struct FavoritesFeature { // TODO: write tests
     private var logger = Logger(subsystem: "GameOfThronesWiki", category: "FavoritesFeature")
     @Dependency(\.favoritesService) var favoritesService
     
